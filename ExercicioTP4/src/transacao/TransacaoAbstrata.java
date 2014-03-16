@@ -2,6 +2,8 @@ package transacao;
 
 import java.util.Date;
 
+import util.TransactionExecutionException;
+
 public abstract class TransacaoAbstrata implements Transacao{
 	boolean executada = false;
 	Date date;
@@ -18,7 +20,7 @@ public abstract class TransacaoAbstrata implements Transacao{
 		return this.date;
 	}
 	
-	public final void  executar(){
+	public final void  executar() throws TransactionExecutionException{
 		if(!this.executada()){
 			this.executarEfetivamente();
 			this.executada = true;
@@ -26,7 +28,7 @@ public abstract class TransacaoAbstrata implements Transacao{
 		
 	}
 	
-	public abstract void executarEfetivamente();
+	public abstract void executarEfetivamente() throws TransactionExecutionException;
 	
 	public boolean executada(){
 		return this.executada;

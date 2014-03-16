@@ -12,16 +12,19 @@ public class Retirada  extends TransacaoBancaria{
 
 	protected Retirada(Date data, Conta origem, Conta destino, BigDecimal valor) {
 		super(data, origem, null, valor);
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor s
 	}
+	
 	@Override
-	public void executar(){
-		// TODO Auto-generated method stub
-	  if(this.getOrigem().getSaldo().compareTo(getValor())==-1){
-		  
-	  }else{
-		this.getOrigem().debitar(getValor());
-	  }
-
+	public  void executarEfetivamente () throws TransactionExecutionException{
+		  if(this.getOrigem().getSaldo().compareTo(getValor())==-1){
+			  throw new TransactionExecutionException("Saldo Insucifiente", this);
+			  
+		  }else{
+			this.getOrigem().debitar(getValor());
+		  }
+			
+	}
 
 }
+	

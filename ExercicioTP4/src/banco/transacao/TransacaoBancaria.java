@@ -6,6 +6,7 @@ import java.util.Date;
 import banco.conta.Conta;
 
 import transacao.TransacaoAbstrata;
+import util.TransactionExecutionException;
 
 public abstract class TransacaoBancaria extends TransacaoAbstrata{
 	private Conta origem;
@@ -26,16 +27,11 @@ public abstract class TransacaoBancaria extends TransacaoAbstrata{
 		
 	}
 
-	@Override
-	public void aexecutar() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
-	public void executarEfetivamente() {
-		// TODO Auto-generated method stub
-		
+	public  void executarEfetivamente() throws TransactionExecutionException{ 
+	
+		// TODO Auto-generated method st
 	}
 	
 	public Conta getOrigem(){
@@ -44,6 +40,10 @@ public abstract class TransacaoBancaria extends TransacaoAbstrata{
 	
 	public Conta getDestino(){
 		return this.destino;
+	}
+	
+	public BigDecimal getValor(){
+		return this.valor;
 	}
 
 }
