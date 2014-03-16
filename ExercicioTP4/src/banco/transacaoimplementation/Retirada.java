@@ -12,7 +12,6 @@ public class Retirada  extends TransacaoBancaria{
 
 	protected Retirada(Date data, Conta origem, Conta destino, BigDecimal valor) {
 		super(data, origem, null, valor);
-		// TODO Auto-generated constructor s
 	}
 	
 	@Override
