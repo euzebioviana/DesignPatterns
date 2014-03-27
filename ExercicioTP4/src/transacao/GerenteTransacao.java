@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import util.TransactionExecutionException;
+
 
 public class GerenteTransacao {
 	private List<Transacao> aExecutar = new ArrayList<Transacao>();
@@ -16,8 +18,10 @@ public class GerenteTransacao {
 		
 	}
 	
-	public void executarTransacoes(){
-
+	public void executar() throws TransactionExecutionException{
+		for(Transacao transacao : this.aExecutar){
+			transacao.executar();
+		}
 		
 	}
 	

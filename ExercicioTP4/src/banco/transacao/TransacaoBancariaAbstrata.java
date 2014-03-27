@@ -13,13 +13,20 @@ public abstract class TransacaoBancariaAbstrata extends TransacaoAbstrata implem
 	private Conta destino;
 	private BigDecimal valor = new BigDecimal(0);
 
-	protected TransacaoBancariaAbstrata(Date data,Conta origem,Conta destino,BigDecimal valor) {
+	public TransacaoBancariaAbstrata(Date data,Conta origem,Conta destino,BigDecimal valor) {
 		super(data);
 		// TODO Auto-generated constructor stub
 		this.origem = origem;
 		this.destino = destino;
 		this.valor = valor;
 	}
+	
+	public TransacaoBancariaAbstrata(Date data,Conta origem,BigDecimal valor){
+		super(data);
+		this.origem = origem;
+		this.valor = valor;
+	}
+	
 
 	@Override
 	public void execute() {

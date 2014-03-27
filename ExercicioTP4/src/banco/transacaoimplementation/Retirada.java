@@ -11,7 +11,7 @@ import banco.transacao.TransacaoBancariaAbstrata;
 
 public class Retirada  extends TransacaoBancariaAbstrata{
 
-	protected Retirada(Date data, Conta origem, Conta destino, BigDecimal valor) {
+	public Retirada(Date data, Conta origem, Conta destino, BigDecimal valor) {
 		super(data, origem, null, valor);
 	}
 	

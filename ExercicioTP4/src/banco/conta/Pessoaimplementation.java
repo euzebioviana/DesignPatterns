@@ -26,8 +26,9 @@ public class Pessoaimplementation implements Pessoa {
 		String[] nomes = nome.split(" ");
 		nomeSeparado[0] = nomes[0];
 		
+		nomeSeparado[1] = " ";
 		for(int i=1;i<nomes.length;i++){
-			nomeSeparado[1] += nomes[i].concat(" ");
+			nomeSeparado[1] += nomes[i];
 		}
 		
 		return nomeSeparado;
@@ -40,6 +41,7 @@ public class Pessoaimplementation implements Pessoa {
 	public String getNome() {
 		
 		String nomeCompleto = serHumnano.getPrimeiroNome() + " " + serHumnano.getSegundoNome();
+
 		return nomeCompleto;
 
 	}

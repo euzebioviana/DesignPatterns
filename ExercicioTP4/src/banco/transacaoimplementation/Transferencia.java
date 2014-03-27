@@ -11,7 +11,7 @@ import banco.transacao.TransacaoBancariaAbstrata;
 
 public  class Transferencia extends TransacaoBancariaAbstrata{
 
-	protected Transferencia(Date data, Conta origem, Conta destino,
+	public Transferencia(Date data, Conta origem, Conta destino,
 			BigDecimal valor) {
 		super(data, origem, destino, valor);
 	}
