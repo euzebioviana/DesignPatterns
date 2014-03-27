@@ -3,12 +3,13 @@ package banco.transacaoimplementation;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import transacao.TransacaoComposta;
 import util.TransactionExecutionException;
 
 import banco.conta.Conta;
-import banco.transacao.TransacaoBancaria;
+import banco.transacao.TransacaoBancariaAbstrata;
 
-public  class Transferencia extends TransacaoBancaria{
+public  class Transferencia extends TransacaoBancariaAbstrata{
 
 	protected Transferencia(Date data, Conta origem, Conta destino,
 			BigDecimal valor) {
@@ -19,6 +20,11 @@ public  class Transferencia extends TransacaoBancaria{
 		this.getOrigem().debitar(getValor());
 		this.getDestino().creditar(getValor());
 		
+	}
+	@Override
+	public TransacaoComposta getTransacoComposta() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

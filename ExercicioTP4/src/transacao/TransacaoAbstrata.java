@@ -33,5 +33,10 @@ public abstract class TransacaoAbstrata implements Transacao{
 	public boolean executada(){
 		return this.executada;
 	}
+	
+	public TransacaoComposta getTransacaoComposta(){
+		//retorna null pois não é uma transação composta
+		return null;
+	}
 
 }

@@ -13,5 +13,6 @@ public interface  Transacao  {
 	public void execute();
 	
 	public void executar() throws TransactionExecutionException;
+	public TransacaoComposta getTransacoComposta();
 
 }
