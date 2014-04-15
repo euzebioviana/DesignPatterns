@@ -29,13 +29,6 @@ public abstract class TransacaoBancariaAbstrata extends TransacaoAbstrata implem
 	
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
 	public  void executarEfetivamente() throws TransactionExecutionException{ 
 	
 		// TODO Auto-generated method st

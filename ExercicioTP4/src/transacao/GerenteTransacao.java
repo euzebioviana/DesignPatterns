@@ -11,7 +11,7 @@ import util.TransactionExecutionException;
 public class GerenteTransacao {
 	private List<Transacao> aExecutar = new ArrayList<Transacao>();
 	private List<Transacao> aExecutadas = new ArrayList<Transacao>();
-	private List<Transacao> nExecutadas = new ArrayList<Transacao>();
+//	private List<Transacao> nExecutadas = new ArrayList<Transacao>();
 	
 	//construtor da Classe GerenteTransação
 	public GerenteTransacao(){
@@ -19,9 +19,16 @@ public class GerenteTransacao {
 	}
 	
 	public void executar() throws TransactionExecutionException{
-		for(Transacao transacao : this.aExecutar){
+		Iterator<Transacao> aux  = this.aExecutar.iterator();
+		List<Transacao> executadas = new ArrayList<Transacao>();
+		
+		while(aux.hasNext()){
+			Transacao transacao = aux.next();
 			transacao.executar();
+			executadas.add(transacao);
 		}
+		this.aExecutadas.addAll(executadas);
+		this.aExecutar.removeAll(executadas);
 		
 	}
 	
@@ -48,8 +55,5 @@ public class GerenteTransacao {
 		return Collections.unmodifiableList(this.aExecutar).iterator();
 	}
 	
-	public Iterator<Transacao> getTransacoesNaoExecutadas(){
-		return Collections.unmodifiableList(this.nExecutadas).iterator();
-	}
 
 }

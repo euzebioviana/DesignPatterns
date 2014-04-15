@@ -21,12 +21,6 @@ public class TransacaoCompostaImplementation extends TransacaoAbstrata implement
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public TransacaoComposta getTransacoComposta() {
 		// TODO Auto-generated method stub
 		return this;
@@ -69,5 +63,6 @@ public class TransacaoCompostaImplementation extends TransacaoAbstrata implement
 		}
 		
 	}
+
 
 }
